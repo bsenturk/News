@@ -14,6 +14,7 @@
 		FA2F979D2197638E0040F020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2F979B2197638E0040F020 /* LaunchScreen.storyboard */; };
 		FA2F97A02197638E0040F020 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F979F2197638E0040F020 /* main.m */; };
 		FA2F97A8219778880040F020 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F97A7219778880040F020 /* PageViewController.m */; };
+		FA6C0407219B7A6E00F8C040 /* Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6C0406219B7A6E00F8C040 /* Colors.m */; };
 		FAF95B6E2199E1A000DF2AD8 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF95B6D2199E1A000DF2AD8 /* CategoriesViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,8 @@
 		FA2F979F2197638E0040F020 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA2F97A6219778880040F020 /* PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		FA2F97A7219778880040F020 /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		FA6C0405219B7A6E00F8C040 /* Colors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
+		FA6C0406219B7A6E00F8C040 /* Colors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Colors.m; sourceTree = "<group>"; };
 		FAF95B6C2199E1A000DF2AD8 /* CategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		FAF95B6D2199E1A000DF2AD8 /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +67,7 @@
 		FA2F978F2197638D0040F020 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				FA6C0404219B7A3300F8C040 /* Utilities */,
 				FA2F97902197638D0040F020 /* AppDelegate.h */,
 				FA2F97912197638D0040F020 /* AppDelegate.m */,
 				FA2F97932197638D0040F020 /* ViewController.h */,
@@ -79,6 +83,15 @@
 				FAF95B6D2199E1A000DF2AD8 /* CategoriesViewController.m */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		FA6C0404219B7A3300F8C040 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FA6C0405219B7A6E00F8C040 /* Colors.h */,
+				FA6C0406219B7A6E00F8C040 /* Colors.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2F97952197638D0040F020 /* ViewController.m in Sources */,
+				FA6C0407219B7A6E00F8C040 /* Colors.m in Sources */,
 				FA2F97A02197638E0040F020 /* main.m in Sources */,
 				FA2F97922197638D0040F020 /* AppDelegate.m in Sources */,
 				FAF95B6E2199E1A000DF2AD8 /* CategoriesViewController.m in Sources */,

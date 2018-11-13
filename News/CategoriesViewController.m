@@ -7,7 +7,7 @@
 //
 
 #import "CategoriesViewController.h"
-
+#import "Colors.h"
 @interface CategoriesViewController ()
 
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *categories;
@@ -30,6 +30,12 @@
         
     }
     
+    Colors *colors = [[Colors alloc]init];
+    
+   self.view.backgroundColor = [colors rgb:255 green:204 blue:0];
+    
+//    self.view.backgroundColor = [UIColor colorWithRed:255.0f/255.0f green:204.0f/255.0f blue:0.0f/255.0f alpha:1];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -42,9 +48,7 @@
         [self setAnimateImageViews:imageView delay:self.delay];
         
         self.delay += 0.5 ;
-        NSString *str = [NSString stringWithFormat:@"%ld",(long)self.delay];
-        
-        NSLog(@"%@",str);
+      
     }
     
     

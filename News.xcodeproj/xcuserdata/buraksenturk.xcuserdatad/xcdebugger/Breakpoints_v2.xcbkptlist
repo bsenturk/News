@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "News/CategoriesViewController.m"
-            timestampString = "563834248.283321"
+            timestampString = "563838708.152217"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "-setAnimateImageViews:delay:"
             landmarkType = "7">
             <Locations>
