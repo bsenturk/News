@@ -137,10 +137,10 @@
 
 
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 250;
-}
+}*/
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -161,7 +161,7 @@
     NSURL *imageUrl = [[NSURL alloc]initWithString:self.newsArray[indexPath.row].imageUrl];
     NSData *imageData = [[NSData alloc]initWithContentsOfURL:imageUrl];
     
-    cell.imageView.image = [UIImage imageWithData:imageData];
+    cell.newsImageView.image = [UIImage imageWithData:imageData];
     
     
 
