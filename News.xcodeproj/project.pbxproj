@@ -16,6 +16,10 @@
 		FA2F97A8219778880040F020 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F97A7219778880040F020 /* PageViewController.m */; };
 		FA6C0407219B7A6E00F8C040 /* Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6C0406219B7A6E00F8C040 /* Colors.m */; };
 		FA886833219F8650001D957A /* NewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA886832219F8650001D957A /* NewsController.m */; };
+		FA88683821A045C7001D957A /* NewsCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88683621A045C7001D957A /* NewsCellTableViewCell.m */; };
+		FA88683921A045C7001D957A /* NewsCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA88683721A045C7001D957A /* NewsCellTableViewCell.xib */; };
+		FA88683D21A0538B001D957A /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88683C21A0538B001D957A /* News.m */; };
+		FA88684021A05615001D957A /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88683F21A05615001D957A /* Constant.m */; };
 		FAF95B6E2199E1A000DF2AD8 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF95B6D2199E1A000DF2AD8 /* CategoriesViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +40,13 @@
 		FA6C0406219B7A6E00F8C040 /* Colors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Colors.m; sourceTree = "<group>"; };
 		FA886831219F8650001D957A /* NewsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsController.h; sourceTree = "<group>"; };
 		FA886832219F8650001D957A /* NewsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsController.m; sourceTree = "<group>"; };
+		FA88683521A045C7001D957A /* NewsCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsCellTableViewCell.h; sourceTree = "<group>"; };
+		FA88683621A045C7001D957A /* NewsCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsCellTableViewCell.m; sourceTree = "<group>"; };
+		FA88683721A045C7001D957A /* NewsCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCellTableViewCell.xib; sourceTree = "<group>"; };
+		FA88683B21A0538B001D957A /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		FA88683C21A0538B001D957A /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		FA88683E21A05615001D957A /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		FA88683F21A05615001D957A /* Constant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
 		FAF95B6C2199E1A000DF2AD8 /* CategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		FAF95B6D2199E1A000DF2AD8 /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +81,8 @@
 		FA2F978F2197638D0040F020 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				FA88683A21A0536A001D957A /* Model */,
+				FA88683421A04580001D957A /* View */,
 				FA886830219F85CB001D957A /* Controller */,
 				FA6C0404219B7A3300F8C040 /* Utilities */,
 				FA2F97902197638D0040F020 /* AppDelegate.h */,
@@ -88,6 +101,8 @@
 			children = (
 				FA6C0405219B7A6E00F8C040 /* Colors.h */,
 				FA6C0406219B7A6E00F8C040 /* Colors.m */,
+				FA88683E21A05615001D957A /* Constant.h */,
+				FA88683F21A05615001D957A /* Constant.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -105,6 +120,25 @@
 				FA886832219F8650001D957A /* NewsController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA88683421A04580001D957A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA88683521A045C7001D957A /* NewsCellTableViewCell.h */,
+				FA88683621A045C7001D957A /* NewsCellTableViewCell.m */,
+				FA88683721A045C7001D957A /* NewsCellTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA88683A21A0536A001D957A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA88683B21A0538B001D957A /* News.h */,
+				FA88683C21A0538B001D957A /* News.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +200,7 @@
 			files = (
 				FA2F979D2197638E0040F020 /* LaunchScreen.storyboard in Resources */,
 				FA2F979A2197638E0040F020 /* Assets.xcassets in Resources */,
+				FA88683921A045C7001D957A /* NewsCellTableViewCell.xib in Resources */,
 				FA2F97982197638D0040F020 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +214,9 @@
 			files = (
 				FA2F97952197638D0040F020 /* ViewController.m in Sources */,
 				FA6C0407219B7A6E00F8C040 /* Colors.m in Sources */,
+				FA88683D21A0538B001D957A /* News.m in Sources */,
+				FA88684021A05615001D957A /* Constant.m in Sources */,
+				FA88683821A045C7001D957A /* NewsCellTableViewCell.m in Sources */,
 				FA2F97A02197638E0040F020 /* main.m in Sources */,
 				FA2F97922197638D0040F020 /* AppDelegate.m in Sources */,
 				FAF95B6E2199E1A000DF2AD8 /* CategoriesViewController.m in Sources */,
@@ -322,6 +360,7 @@
 		FA2F97A42197638E0040F020 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ADPP457ME6;
@@ -339,6 +378,7 @@
 		FA2F97A52197638E0040F020 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ADPP457ME6;

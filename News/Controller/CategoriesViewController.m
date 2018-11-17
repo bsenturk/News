@@ -55,6 +55,11 @@
     
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
+    self.navigationController.navigationBar.tintColor = UIColor.whiteColor;
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    [[self navigationItem] setBackBarButtonItem:backButton];
+    
     [self.navigationController pushViewController:newsController animated:YES];
 }
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCellId" rowHeight="272" id="KGk-i7-Jjw" customClass="NewsCellTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="271.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r4i-dL-la0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="221.5"/>
+                        <color key="backgroundColor" red="1" green="0.16918902899999999" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDV-4n-eFK">
+                        <rect key="frame" x="5" y="236.5" width="315" height="20"/>
+                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="YDV-4n-eFK" secondAttribute="bottom" constant="15" id="Dwb-UD-0Mw"/>
+                    <constraint firstItem="r4i-dL-la0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EQI-IE-o3f"/>
+                    <constraint firstAttribute="trailing" secondItem="YDV-4n-eFK" secondAttribute="trailing" id="HZP-ct-0pS"/>
+                    <constraint firstItem="YDV-4n-eFK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Ihz-Ob-koe"/>
+                    <constraint firstAttribute="trailing" secondItem="r4i-dL-la0" secondAttribute="trailing" id="LXe-H8-4Eu"/>
+                    <constraint firstItem="r4i-dL-la0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RRr-2w-3wx"/>
+                    <constraint firstItem="YDV-4n-eFK" firstAttribute="top" secondItem="r4i-dL-la0" secondAttribute="bottom" constant="15" id="aee-WW-tyI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="newsDescriptionLabel" destination="YDV-4n-eFK" id="r0f-oV-fml"/>
+                <outlet property="newsImageView" destination="r4i-dL-la0" id="75P-Z4-7sG"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="-60"/>
+        </tableViewCell>
+    </objects>
+</document>
