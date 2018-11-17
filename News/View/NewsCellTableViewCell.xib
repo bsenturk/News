@@ -37,7 +37,7 @@
                     <constraint firstItem="YDV-4n-eFK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Ihz-Ob-koe"/>
                     <constraint firstAttribute="trailing" secondItem="r4i-dL-la0" secondAttribute="trailing" id="LXe-H8-4Eu"/>
                     <constraint firstItem="r4i-dL-la0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RRr-2w-3wx"/>
-                    <constraint firstItem="YDV-4n-eFK" firstAttribute="top" secondItem="r4i-dL-la0" secondAttribute="bottom" constant="15" id="aee-WW-tyI"/>
+                    <constraint firstItem="YDV-4n-eFK" firstAttribute="top" secondItem="r4i-dL-la0" secondAttribute="bottom" constant="15" id="pD7-Sr-2rz"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>

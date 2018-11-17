@@ -15,12 +15,15 @@
 @property NSString *cellId;
 @property (weak , nonatomic) IBOutlet UITableView *tableView;
 @property (strong,nonatomic) NSMutableArray<News *> *newsArray;
-
+@property (strong , nonatomic) UIActivityIndicatorView *actIndicator;
+@property (strong , nonatomic) UIView *wtView;
 @property NSString *categoryName;
 
 @end
 
 @implementation NewsController
+
+static BOOL isLoad;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,15 +33,52 @@
     self.tableView.dataSource = self;
     
     self.cellId = @"newsCellId";
+    isLoad = NO;
     
-    self.categoryName = @"magazin";
+    self.categoryName = @"Magazin";
     
-    [self fetchNews:self.categoryName];
+    NSString *count = @"?$top=15";
+    
+    self.navigationItem.title = self.categoryName;
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
+ 
+    self.navigationController.navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
+    NSString *countParameter = [NSString stringWithFormat:@"%@%@",self.categoryName,count];
+    
+    [self fetchNews:countParameter];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"NewsCellTableViewCell" bundle:nil] forCellReuseIdentifier:@"newsCellId"];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 250;
+    self.tableView.estimatedRowHeight = 100;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self setupProgressOfNews];
     
+}
+
+-(void)setupProgressOfNews{
+    
+    
+    UIView *waitView = UIView.new;
+    [self.view addSubview:waitView];
+    waitView.translatesAutoresizingMaskIntoConstraints = false;
+    waitView.backgroundColor = UIColor.grayColor;
+    waitView.layer.cornerRadius = 5;
+    [waitView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [waitView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
+    [waitView.heightAnchor constraintEqualToConstant:100].active = YES;
+    [waitView.widthAnchor constraintEqualToConstant:100].active = YES;
+    self.wtView = waitView;
+    UIActivityIndicatorView *activityIndicator = UIActivityIndicatorView.new;
+    activityIndicator.translatesAutoresizingMaskIntoConstraints = false;
+    activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    [waitView addSubview:activityIndicator];
+    
+    [activityIndicator.centerYAnchor constraintEqualToAnchor:waitView.centerYAnchor].active = YES;
+    [activityIndicator.centerXAnchor constraintEqualToAnchor:waitView.centerXAnchor].active = YES;
+    
+    [activityIndicator startAnimating];
+    self.actIndicator = activityIndicator;
     
 }
 
@@ -54,6 +94,15 @@
     [super viewWillDisappear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+
+    
+   
+    
 }
 
 - (void)fetchNews:(NSString *)categoryName {
@@ -98,10 +147,12 @@
         for(NSDictionary *news in listDict) {
             
             NSString *desc = news[@"Description"];
+            NSString *contentType = news[@"ContentType"];
             
               News *newsModel = News.new;
             
             newsModel.desc = desc;
+            newsModel.contentType = contentType;
             
             NSDictionary *imagesFiles = [news objectForKey:@"Files"];
             
@@ -113,9 +164,10 @@
             }
             
             
-            
+            if([contentType  isEqual: @"Article"]) {
             
             [newsArr addObject:newsModel];
+            }
             
         }
         
@@ -125,6 +177,13 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
+           
+            
+        });
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.actIndicator stopAnimating];
+            [self.wtView removeFromSuperview];
         });
         
         
@@ -154,11 +213,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NewsCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellId forIndexPath:indexPath];
    // cell = [[NewsCellTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:self.cellId];
-    
+
     News *news = self.newsArray[indexPath.row];
     cell.newsDescriptionLabel.text = news.desc;
     
-    NSURL *imageUrl = [[NSURL alloc]initWithString:self.newsArray[indexPath.row].imageUrl];
+    NSURL *imageUrl = [[NSURL alloc]initWithString:news.imageUrl];
     NSData *imageData = [[NSData alloc]initWithContentsOfURL:imageUrl];
     
     cell.newsImageView.image = [UIImage imageWithData:imageData];
