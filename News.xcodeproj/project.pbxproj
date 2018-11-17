@@ -15,6 +15,7 @@
 		FA2F97A02197638E0040F020 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F979F2197638E0040F020 /* main.m */; };
 		FA2F97A8219778880040F020 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F97A7219778880040F020 /* PageViewController.m */; };
 		FA6C0407219B7A6E00F8C040 /* Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6C0406219B7A6E00F8C040 /* Colors.m */; };
+		FA6E8D5821A0CC9400D06A65 /* NewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8D5721A0CC9400D06A65 /* NewsDetailController.m */; };
 		FA886833219F8650001D957A /* NewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA886832219F8650001D957A /* NewsController.m */; };
 		FA88683821A045C7001D957A /* NewsCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88683621A045C7001D957A /* NewsCellTableViewCell.m */; };
 		FA88683921A045C7001D957A /* NewsCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA88683721A045C7001D957A /* NewsCellTableViewCell.xib */; };
@@ -38,6 +39,8 @@
 		FA2F97A7219778880040F020 /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		FA6C0405219B7A6E00F8C040 /* Colors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
 		FA6C0406219B7A6E00F8C040 /* Colors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Colors.m; sourceTree = "<group>"; };
+		FA6E8D5621A0CC9400D06A65 /* NewsDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsDetailController.h; sourceTree = "<group>"; };
+		FA6E8D5721A0CC9400D06A65 /* NewsDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsDetailController.m; sourceTree = "<group>"; };
 		FA886831219F8650001D957A /* NewsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsController.h; sourceTree = "<group>"; };
 		FA886832219F8650001D957A /* NewsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsController.m; sourceTree = "<group>"; };
 		FA88683521A045C7001D957A /* NewsCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsCellTableViewCell.h; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				FA2F97942197638D0040F020 /* ViewController.m */,
 				FA886831219F8650001D957A /* NewsController.h */,
 				FA886832219F8650001D957A /* NewsController.m */,
+				FA6E8D5621A0CC9400D06A65 /* NewsDetailController.h */,
+				FA6E8D5721A0CC9400D06A65 /* NewsDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2F97952197638D0040F020 /* ViewController.m in Sources */,
+				FA6E8D5821A0CC9400D06A65 /* NewsDetailController.m in Sources */,
 				FA6C0407219B7A6E00F8C040 /* Colors.m in Sources */,
 				FA88683D21A0538B001D957A /* News.m in Sources */,
 				FA88684021A05615001D957A /* Constant.m in Sources */,

@@ -155,6 +155,49 @@
             </objects>
             <point key="canvasLocation" x="1895" y="872"/>
         </scene>
+        <!--News Detail Controller-->
+        <scene sceneID="6HA-5z-VkW">
+            <objects>
+                <viewController storyboardIdentifier="NewsDetailController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1aR-Xz-uji" customClass="NewsDetailController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vpv-sa-zxO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iHL-rY-P6c">
+                                <rect key="frame" x="0.0" y="20" width="375" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="onh-cf-xUz"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x2Q-8X-53l">
+                                <rect key="frame" x="0.0" y="260" width="375" height="407"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iHL-rY-P6c" firstAttribute="trailing" secondItem="w71-9D-59W" secondAttribute="trailing" id="2Za-Hq-sHN"/>
+                            <constraint firstItem="w71-9D-59W" firstAttribute="trailing" secondItem="x2Q-8X-53l" secondAttribute="trailing" id="8qP-FS-a8F"/>
+                            <constraint firstItem="x2Q-8X-53l" firstAttribute="top" secondItem="iHL-rY-P6c" secondAttribute="bottom" constant="10" id="SW4-RX-x1z"/>
+                            <constraint firstItem="x2Q-8X-53l" firstAttribute="leading" secondItem="w71-9D-59W" secondAttribute="leading" id="ZsB-He-Obv"/>
+                            <constraint firstItem="iHL-rY-P6c" firstAttribute="top" secondItem="w71-9D-59W" secondAttribute="top" id="cbk-xy-MhB"/>
+                            <constraint firstItem="iHL-rY-P6c" firstAttribute="leading" secondItem="w71-9D-59W" secondAttribute="leading" id="laG-0R-Ywj"/>
+                            <constraint firstItem="w71-9D-59W" firstAttribute="bottom" secondItem="x2Q-8X-53l" secondAttribute="bottom" id="s80-DL-Jof"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="w71-9D-59W"/>
+                    </view>
+                    <connections>
+                        <outlet property="newsImageView" destination="iHL-rY-P6c" id="84c-31-Eyr"/>
+                        <outlet property="newsTextView" destination="x2Q-8X-53l" id="eNv-CQ-6vz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DkP-zk-zdz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2772" y="911"/>
+        </scene>
         <!--Page View Controller-->
         <scene sceneID="JxU-PY-psW">
             <objects>

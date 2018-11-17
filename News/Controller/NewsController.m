@@ -11,6 +11,7 @@
 #import "Colors.h"
 #import "Constant.h"
 #import "News.h"
+#import "NewsDetailController.h"
 @interface NewsController ()
 @property NSString *cellId;
 @property (weak , nonatomic) IBOutlet UITableView *tableView;
@@ -227,6 +228,16 @@ static BOOL isLoad;
     
     return cell;
     
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NewsDetailController *newsDetailController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewsDetailController"];
+    
+    
+    Colors *colors = Colors.new;
+    self.navigationController.navigationBar.barTintColor = [colors rgb:255 green:204 blue:0];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:newsDetailController animated:YES];
 }
 
 
