@@ -8,11 +8,13 @@
 
 #import "CategoriesViewController.h"
 #import "Colors.h"
+#import "NewsController.h"
 @interface CategoriesViewController ()
 
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *categories;
 
 @property(nonatomic,assign) float delay;
+@property (weak ,nonatomic) IBOutlet UIImageView *image1;
 
 @end
 
@@ -36,6 +38,24 @@
     
 //    self.view.backgroundColor = [UIColor colorWithRed:255.0f/255.0f green:204.0f/255.0f blue:0.0f/255.0f alpha:1];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleNewsAction:)];
+    
+    [self.image1 addGestureRecognizer:tap];
+    
+}
+
+- (void)handleNewsAction:(UITapGestureRecognizer *)recognizer {
+    
+    NewsController *newsController = [[NewsController alloc]init];
+    UIStoryboard *storyboard = self.storyboard;
+    
+//    NSString *storyboardName = [storyboard valueForKey:@"Main"];
+    
+    newsController = [storyboard instantiateViewControllerWithIdentifier:@"NewsController"];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    
+    [self.navigationController pushViewController:newsController animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

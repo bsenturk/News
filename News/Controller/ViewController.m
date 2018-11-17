@@ -28,7 +28,11 @@
 }
 - (IBAction)skipButton:(UIButton *)sender {
     CategoriesViewController *categoriesViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CategoriesViewController"];
-    [self presentViewController:categoriesViewController animated:YES completion:NULL];
+    
+    UINavigationController *rootVC = [[UINavigationController alloc]initWithRootViewController:categoriesViewController];
+    [rootVC setNavigationBarHidden:YES animated:YES];
+    
+    [self presentViewController:rootVC animated:YES completion:NULL];
     
 }
 
