@@ -8,10 +8,11 @@
 
 #import "ViewController.h"
 #import "CategoriesViewController.h"
+#import "Colors.h"
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-
-
+@property(weak ,nonatomic) IBOutlet UIButton *skipButton;
+@property (weak,nonatomic) IBOutlet UIImageView *backgroundImage;
 
 @end
 
@@ -20,10 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-    
-    self.view.backgroundColor = self.bgColor;
+    Colors *colors = Colors.new;
+    self.view.backgroundColor = [colors rgb:255 green:204 blue:0]; //self.bgColor;
    
     self.pageControl.currentPage = self.pageIndex;
+    self.skipButton.alpha = 0;
+    if (self.pageIndex == 2) {
+        
+        self.skipButton.alpha = 1;
+        
+    }
 
 }
 - (IBAction)skipButton:(UIButton *)sender {

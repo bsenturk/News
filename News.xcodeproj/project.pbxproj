@@ -16,6 +16,7 @@
 		FA2F97A8219778880040F020 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F97A7219778880040F020 /* PageViewController.m */; };
 		FA6C0407219B7A6E00F8C040 /* Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6C0406219B7A6E00F8C040 /* Colors.m */; };
 		FA6E8D5821A0CC9400D06A65 /* NewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8D5721A0CC9400D06A65 /* NewsDetailController.m */; };
+		FA6E8D5B21A1D87B00D06A65 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6E8D5A21A1D87B00D06A65 /* SystemConfiguration.framework */; };
 		FA886833219F8650001D957A /* NewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA886832219F8650001D957A /* NewsController.m */; };
 		FA88683821A045C7001D957A /* NewsCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88683621A045C7001D957A /* NewsCellTableViewCell.m */; };
 		FA88683921A045C7001D957A /* NewsCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA88683721A045C7001D957A /* NewsCellTableViewCell.xib */; };
@@ -41,6 +42,7 @@
 		FA6C0406219B7A6E00F8C040 /* Colors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Colors.m; sourceTree = "<group>"; };
 		FA6E8D5621A0CC9400D06A65 /* NewsDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsDetailController.h; sourceTree = "<group>"; };
 		FA6E8D5721A0CC9400D06A65 /* NewsDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsDetailController.m; sourceTree = "<group>"; };
+		FA6E8D5A21A1D87B00D06A65 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FA886831219F8650001D957A /* NewsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsController.h; sourceTree = "<group>"; };
 		FA886832219F8650001D957A /* NewsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsController.m; sourceTree = "<group>"; };
 		FA88683521A045C7001D957A /* NewsCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsCellTableViewCell.h; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6E8D5B21A1D87B00D06A65 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +73,7 @@
 			children = (
 				FA2F978F2197638D0040F020 /* News */,
 				FA2F978E2197638D0040F020 /* Products */,
+				FA6E8D5921A1D87A00D06A65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +112,14 @@
 				FA88683F21A05615001D957A /* Constant.m */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FA6E8D5921A1D87A00D06A65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E8D5A21A1D87B00D06A65 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FA886830219F85CB001D957A /* Controller */ = {

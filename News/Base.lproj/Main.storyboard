@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,17 +36,28 @@
                                     <action selector="skipButton:" destination="knI-cA-i3j" eventType="touchUpInside" id="q71-ka-6TT"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="category" translatesAutoresizingMaskIntoConstraints="NO" id="0Xu-Vb-T6B">
+                                <rect key="frame" x="124" y="270" width="127.5" height="127.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0Xu-Vb-T6B" secondAttribute="height" multiplier="1:1" id="OPA-T9-dtJ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="97x-ew-dAA" firstAttribute="bottom" secondItem="5hk-CT-ihk" secondAttribute="bottom" constant="20" id="DXZ-ij-nYe"/>
+                            <constraint firstItem="0Xu-Vb-T6B" firstAttribute="width" secondItem="okd-Ao-Kcu" secondAttribute="width" multiplier="0.34" id="GoU-90-WmQ"/>
                             <constraint firstItem="Akg-4F-fu5" firstAttribute="top" secondItem="97x-ew-dAA" secondAttribute="top" constant="12" id="JLS-KA-4Vp"/>
                             <constraint firstItem="97x-ew-dAA" firstAttribute="trailing" secondItem="Akg-4F-fu5" secondAttribute="trailing" constant="16" id="RQb-PQ-sXq"/>
+                            <constraint firstItem="0Xu-Vb-T6B" firstAttribute="centerX" secondItem="okd-Ao-Kcu" secondAttribute="centerX" id="V1D-50-vtS"/>
                             <constraint firstItem="5hk-CT-ihk" firstAttribute="centerX" secondItem="okd-Ao-Kcu" secondAttribute="centerX" id="dHa-2l-xdl"/>
+                            <constraint firstItem="0Xu-Vb-T6B" firstAttribute="centerY" secondItem="okd-Ao-Kcu" secondAttribute="centerY" id="tiN-DV-Mtz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="97x-ew-dAA"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImage" destination="0Xu-Vb-T6B" id="rlf-aG-q3B"/>
                         <outlet property="pageControl" destination="5hk-CT-ihk" id="aQl-hQ-yMg"/>
+                        <outlet property="skipButton" destination="Akg-4F-fu5" id="gSm-vC-IAD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NdF-Lm-eVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,6 +201,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w71-9D-59W"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Teh-1I-Afw"/>
                     <connections>
                         <outlet property="newsImageView" destination="iHL-rY-P6c" id="84c-31-Eyr"/>
                         <outlet property="newsTextView" destination="x2Q-8X-53l" id="eNv-CQ-6vz"/>
@@ -196,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkP-zk-zdz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2772" y="911"/>
+            <point key="canvasLocation" x="2729" y="871"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="JxU-PY-psW">
@@ -207,4 +220,7 @@
             <point key="canvasLocation" x="148" y="98"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="category" width="128" height="128"/>
+    </resources>
 </document>

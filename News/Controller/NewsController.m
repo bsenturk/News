@@ -12,6 +12,7 @@
 #import "Constant.h"
 #import "News.h"
 #import "NewsDetailController.h"
+
 @interface NewsController ()
 @property NSString *cellId;
 @property (weak , nonatomic) IBOutlet UITableView *tableView;
@@ -25,6 +26,7 @@
 @implementation NewsController
 
 static BOOL isLoad;
+static BOOL isBack;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,7 +37,7 @@ static BOOL isLoad;
     
     self.cellId = @"newsCellId";
     isLoad = NO;
-    
+    isBack = YES;
     self.categoryName = @"Magazin";
     
     NSString *count = @"?$top=15";
@@ -44,6 +46,10 @@ static BOOL isLoad;
     self.navigationController.navigationBar.prefersLargeTitles = YES;
  
     self.navigationController.navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
+   
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     NSString *countParameter = [NSString stringWithFormat:@"%@%@",self.categoryName,count];
     
@@ -55,10 +61,12 @@ static BOOL isLoad;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self setupProgressOfNews];
     
+    
+    
 }
 
 -(void)setupProgressOfNews{
-    
+
     
     UIView *waitView = UIView.new;
     [self.view addSubview:waitView];
@@ -81,6 +89,8 @@ static BOOL isLoad;
     [activityIndicator startAnimating];
     self.actIndicator = activityIndicator;
     
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -93,8 +103,11 @@ static BOOL isLoad;
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
+    if(isBack == YES) {
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    }else {
+         [self.navigationController setNavigationBarHidden:NO animated:NO];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -149,11 +162,13 @@ static BOOL isLoad;
             
             NSString *desc = news[@"Description"];
             NSString *contentType = news[@"ContentType"];
+            NSString *text = news[@"Text"];
             
               News *newsModel = News.new;
             
             newsModel.desc = desc;
             newsModel.contentType = contentType;
+            newsModel.text = text;
             
             NSDictionary *imagesFiles = [news objectForKey:@"Files"];
             
@@ -231,12 +246,23 @@ static BOOL isLoad;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NewsDetailController *newsDetailController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewsDetailController"];
+    NewsDetailController *newsDetailController = [[NewsDetailController alloc]init];
+    UIStoryboard *storyboard = self.storyboard;
     
+    newsDetailController = [storyboard instantiateViewControllerWithIdentifier:@"NewsDetailController"];
+    isBack = NO;
+    News *news = self.newsArray[indexPath.row];
+ 
+    NSURL *imageUrl = [[NSURL alloc]initWithString:news.imageUrl];
+    NSData *imageData = [[NSData alloc]initWithContentsOfURL:imageUrl];
+
+    newsDetailController.text = news.text;
+    newsDetailController.data = imageData;
     
     Colors *colors = Colors.new;
     self.navigationController.navigationBar.barTintColor = [colors rgb:255 green:204 blue:0];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
     [self.navigationController pushViewController:newsDetailController animated:YES];
 }
 

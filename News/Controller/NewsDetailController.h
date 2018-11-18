@@ -11,6 +11,6 @@
 @interface NewsDetailController : UIViewController
 @property(strong ,nonatomic)  IBOutlet UIImageView *newsImageView;
 @property(strong ,nonatomic) IBOutlet UITextView *newsTextView;
-
-
+@property(strong ,nonatomic) NSString *text;
+@property(strong ,nonatomic) NSData *data;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <SystemConfiguration/SystemConfiguration.h>
 @interface NewsController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
 @end
