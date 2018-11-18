@@ -11,5 +11,7 @@
 @interface ViewController : UIViewController
 @property (strong ,nonatomic) UIColor *bgColor;
 @property NSUInteger pageIndex;
+@property NSString *imgName;
+@property NSString *labelText;
 @end
 

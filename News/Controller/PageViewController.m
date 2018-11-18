@@ -12,7 +12,8 @@
 @property (strong , nonatomic) NSMutableArray *viewControllerList;
 
 @property NSArray *bgColors;
-
+@property NSArray *imagesName;
+@property NSArray *labelText;
 @end
 
 @implementation PageViewController
@@ -22,6 +23,8 @@
 
     
     _bgColors = @[UIColor.redColor, UIColor.greenColor, UIColor.blueColor];
+    self.imagesName = @[@"newspaper-2",@"category" ,@"feedback"];
+    self.labelText = @[@"En güncel haberlere kolayca erişin" , @"5 farklı kategorideki haberler" , @"Keyifli okumalar"];
     self.dataSource = self;
     
     ViewController *initialVC = (ViewController *)[self viewControllerAtIndex:0];
@@ -36,7 +39,8 @@
     ViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"vc1"];
     if(index < 3) {
     viewController.bgColor = self.bgColors[index];
-        
+        viewController.imgName = self.imagesName[index];
+        viewController.labelText = self.labelText[index];
         viewController.pageIndex = index;
         
         return viewController;

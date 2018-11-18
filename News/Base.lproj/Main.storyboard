@@ -31,7 +31,10 @@
                                     <constraint firstAttribute="width" constant="44" id="4Cx-YD-QIf"/>
                                     <constraint firstAttribute="height" constant="44" id="d8n-hY-jgE"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
+                                <state key="normal" title="Geç">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="skipButton:" destination="knI-cA-i3j" eventType="touchUpInside" id="q71-ka-6TT"/>
                                 </connections>
@@ -42,8 +45,15 @@
                                     <constraint firstAttribute="width" secondItem="0Xu-Vb-T6B" secondAttribute="height" multiplier="1:1" id="OPA-T9-dtJ"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veO-iR-wC3">
+                                <rect key="frame" x="15" y="427.5" width="345" height="31.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="97x-ew-dAA" firstAttribute="trailing" secondItem="veO-iR-wC3" secondAttribute="trailing" constant="15" id="8np-Sq-8P5"/>
+                            <constraint firstItem="veO-iR-wC3" firstAttribute="leading" secondItem="97x-ew-dAA" secondAttribute="leading" constant="15" id="9n6-gL-hX8"/>
                             <constraint firstItem="97x-ew-dAA" firstAttribute="bottom" secondItem="5hk-CT-ihk" secondAttribute="bottom" constant="20" id="DXZ-ij-nYe"/>
                             <constraint firstItem="0Xu-Vb-T6B" firstAttribute="width" secondItem="okd-Ao-Kcu" secondAttribute="width" multiplier="0.34" id="GoU-90-WmQ"/>
                             <constraint firstItem="Akg-4F-fu5" firstAttribute="top" secondItem="97x-ew-dAA" secondAttribute="top" constant="12" id="JLS-KA-4Vp"/>
@@ -51,11 +61,13 @@
                             <constraint firstItem="0Xu-Vb-T6B" firstAttribute="centerX" secondItem="okd-Ao-Kcu" secondAttribute="centerX" id="V1D-50-vtS"/>
                             <constraint firstItem="5hk-CT-ihk" firstAttribute="centerX" secondItem="okd-Ao-Kcu" secondAttribute="centerX" id="dHa-2l-xdl"/>
                             <constraint firstItem="0Xu-Vb-T6B" firstAttribute="centerY" secondItem="okd-Ao-Kcu" secondAttribute="centerY" id="tiN-DV-Mtz"/>
+                            <constraint firstItem="veO-iR-wC3" firstAttribute="top" secondItem="0Xu-Vb-T6B" secondAttribute="bottom" constant="30" id="yKX-Qv-Dw6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="97x-ew-dAA"/>
                     </view>
                     <connections>
                         <outlet property="backgroundImage" destination="0Xu-Vb-T6B" id="rlf-aG-q3B"/>
+                        <outlet property="infoLabel" destination="veO-iR-wC3" id="nPb-rK-yAZ"/>
                         <outlet property="pageControl" destination="5hk-CT-ihk" id="aQl-hQ-yMg"/>
                         <outlet property="skipButton" destination="Akg-4F-fu5" id="gSm-vC-IAD"/>
                     </connections>

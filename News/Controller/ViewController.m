@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property(weak ,nonatomic) IBOutlet UIButton *skipButton;
 @property (weak,nonatomic) IBOutlet UIImageView *backgroundImage;
-
+@property (weak,nonatomic) IBOutlet UILabel *infoLabel;
 @end
 
 @implementation ViewController
@@ -24,6 +24,9 @@
     Colors *colors = Colors.new;
     self.view.backgroundColor = [colors rgb:255 green:204 blue:0]; //self.bgColor;
    
+    self.backgroundImage.image = [UIImage imageNamed:self.imgName];
+    self.infoLabel.text = self.labelText;
+    self.infoLabel.textColor = UIColor.whiteColor;
     self.pageControl.currentPage = self.pageIndex;
     self.skipButton.alpha = 0;
     if (self.pageIndex == 2) {
