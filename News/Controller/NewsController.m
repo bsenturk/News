@@ -19,7 +19,7 @@
 @property (strong,nonatomic) NSMutableArray<News *> *newsArray;
 @property (strong , nonatomic) UIActivityIndicatorView *actIndicator;
 @property (strong , nonatomic) UIView *wtView;
-@property NSString *categoryName;
+
 
 @end
 
@@ -38,7 +38,7 @@ static BOOL isBack;
     self.cellId = @"newsCellId";
     isLoad = NO;
     isBack = YES;
-    self.categoryName = @"Magazin";
+    //self.categoryName = @"Magazin";
     
     NSString *count = @"?$top=15";
     
@@ -57,7 +57,7 @@ static BOOL isBack;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"NewsCellTableViewCell" bundle:nil] forCellReuseIdentifier:@"newsCellId"];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 100;
+    self.tableView.estimatedRowHeight = 200;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self setupProgressOfNews];
     
@@ -212,10 +212,10 @@ static BOOL isBack;
 
 
 
-/*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return 250;
-}*/
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//    return 250;
+//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
